@@ -1,0 +1,27 @@
+version: '3'
+
+# networks
+networks:
+  default:
+    driver: bridge
+
+# services
+services:
+  # sftpgo
+  sftpgo:
+    container_name: sftpgo
+    environment:
+      - TZ=Asia/Ho_Chi_Minh
+    volumes:
+      - type: bind
+        source: ./data
+        target: /srv/sftpgo
+      - type: bind
+        source: ./home
+        target: /var/lib/sftpgo
+    image: drakkan/sftpgo
+    networks:
+      - default
+    ports:
+      - 8080:8080/tcp
+    restart: always
