@@ -12,3 +12,5 @@ chmod +x setup.sh
 ```
 docker compose up -d
 ```
+### Original project
+https://github.com/drakkan/sftpgo/blob/main/docker/
